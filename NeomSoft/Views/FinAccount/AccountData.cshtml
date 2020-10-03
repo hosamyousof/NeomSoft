@@ -1,0 +1,84 @@
+﻿@model NeomSoft.Logic.ViewModels.FinAccountViewModel
+
+@{
+    ViewBag.Title = "بيانات الحساب";
+    Layout = null;
+}
+
+<div>
+    <table class="table table-hover table-bordered table-striped">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.Code)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameAr)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.NameAr)
+            </td>
+        </tr>
+        <tr>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.ParentAccountName)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.ParentAccountName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.Note)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Currencies)
+            </th>
+
+            <td>
+                <ul>
+                    @foreach (var item in Model.Currencies)
+                    {
+                        <li> @(item.Code + " - "+item.NameAr) </li>
+                    }
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedDate)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.AddedDate)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedBy)
+            </th>
+
+            <td>
+                @Html.DisplayFor(model => model.AddedBy)
+            </td>
+        </tr>
+
+    </table>
+
+</div>

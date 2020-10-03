@@ -1,0 +1,96 @@
+﻿@model NeomSoft.Logic.ViewModels.FinAccountViewModel
+
+@{
+    ViewBag.Title = "حذف حساب";
+}
+
+<h2>حذف حساب</h2>
+
+@if(ViewData["ErrorMsg"] != null) {
+<br />
+<div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>@(ViewData["ErrorMsg"] as string) </strong>
+</div>
+    }
+
+<h3>هل تريد بالتأكيد حذف الحساب؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameAr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameAr)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentAccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentAccountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currencies)
+        </dt>
+
+        <dd>
+            <ul>
+                @foreach (var item in Model.Currencies)
+                {
+                    <li> @(item.Code + " - "+item.NameAr) </li>
+                }
+            </ul>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedBy)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("العودة لقائمة الحسابات", "Index")
+        </div>
+    }
+</div>

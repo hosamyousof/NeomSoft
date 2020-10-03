@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>نيوم سوفت - Neom Soft</h1>
+</div>
+
+
+<div>
+    <ul>
+        <li>@Html.ActionLink("بإمكانك الإنتقال إلى صفحة بيانات الحسابات من هنا", "Index", "FinAccount")</li>
+        <li>يتطلب تسجيل الدخول للقيام بعمليات الحذف والإضافة والتعديل على الحسابات</li>
+        <li>@Html.ActionLink("بإمكانك الإنتقال إلى صفحة تسجيل الدخول", "Login", "Account") بعد القيام بعملية  @Html.ActionLink("التسجيل من هنا", "Register", "Account")</li>
+        <li>تم تقسيم المشروع إلى43 مشاريع حسب الوظائف
+        <ol>
+            <li><strong> NeomSoft:</strong> مشروع الويب الرئيسي باستخدام ASP.NET MVC</li>
+            <li><strong>NeomSoft.DB:</strong> للقيام بوظيفة ال Data layer </li>
+            <li><strong>NeomSoft.Logic:</strong> للقيام بوظيفة ال Business layer</li>
+            <li><strong>NeomSoft.API:</strong> للقيام بوظيفة ال API وتمكين استخدامها من قبل الأطراف الثانوية</li>
+        </ol>
+        </li>
+        <li>يمكن عمل طباعة التقارير باستخدام Report Viewer لتبدو أكثر احترافية ولكن حاليا تم استخدام طريقة بسيطة وسريقة لتأدية الغرض</li>
+        <li>تم استخدام صفحة تسجيل الدخول الإفتراضية التي تتبع قالب المشروع الذي توفرة Microsoft وبالإمكان عمل تعديل على جدول بيانات المستخدمين واستخدام نفس التقنية</li>
+        <li>لم يتم استخدام Authentication في مشروع ال API حاليا ولكن أنصح باستخدام ASP.NET Identity 2.1 لحماية البيانات من الوصول الغير مصرح</li>
+
+    </ul>
+</div>
